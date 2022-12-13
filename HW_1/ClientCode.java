@@ -18,7 +18,6 @@ public class ClientCode {
     familytree.addNode(vasilisa, Type.daughter, vasisualiy);
     familytree.addNode(elizaveta, Type.daughter, vasisualiy);
 
-
     LearningTree child = new LearningTree(familytree);
     System.out.println(Conclusion.Member(child.findAll(vasisualiy, Type.son)) + (char) 27 + "[33m");
     System.out.println(Conclusion.Member(child.findAll(vasisualiy, Type.daughter)) + (char) 27 + "[35m");
