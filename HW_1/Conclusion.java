@@ -11,5 +11,4 @@ public class Conclusion {
         }
         return res.toString();
     }
-
 }
