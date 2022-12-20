@@ -8,14 +8,14 @@ public class Main {
 
     FamilyMember branch = new FamilyMember();
     List<Subject> society = new ArrayList<Subject>();
-    Subject relative1 = new Subject("Иван", "Зубарев", 30, Sex.Мужчина);
-    Subject relative2 = new Subject("Екатерина", "Зубарева", 27, Sex.Женщина);
-    Subject relative3 = new Subject("Семен", "Бабенко", 57, Sex.Мужчина);
-    Subject relative4 = new Subject("Светлана", "Зубарева", 50, Sex.Женщина);
-    Subject relative5 = new Subject("Василий", "Бабенко", 29, Sex.Мужчина);
-    Subject relative6 = new Subject("Иван", "Бабенко", 19, Sex.Мужчина);
-    Subject relative7 = new Subject("Раиса", "Брызгунова", 86, Sex.Женщина);
-    Subject relative8 = new Subject("Олег", "Зубарев", 3, Sex.Мужчина);
+    Subject relative1 = new Subject("Иван", "Зубарев", 27, Sex.Мужчина);
+    Subject relative2 = new Subject("Екатерина", "Зубарева", 25, Sex.Женщина);
+    Subject relative3 = new Subject("Семен", "Бабенко", 99, Sex.Мужчина);
+    Subject relative4 = new Subject("Светлана", "Зубарева", 51, Sex.Женщина);
+    Subject relative5 = new Subject("Василий", "Бабенко", 77, Sex.Мужчина);
+    Subject relative6 = new Subject("Иван", "Бабенко", 75, Sex.Мужчина);
+    Subject relative7 = new Subject("Раиса", "Брызгунова", 75, Sex.Женщина);
+    Subject relative8 = new Subject("Олег", "Зубарев", 54, Sex.Мужчина);
 
     society.add(relative1);
     society.add(relative2);
@@ -38,7 +38,6 @@ public class Main {
     branch.addAddiction(relative8, relative3, Interrelation.внук, Interrelation.дедушка);
 
     System.out.println(society);
-
     System.out.println("\n");
     Search.getRelation(relative8, branch);
     System.out.println("\n");
