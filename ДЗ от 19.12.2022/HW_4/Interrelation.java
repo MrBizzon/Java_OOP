@@ -1,20 +1,20 @@
 package HW_4;
 
 public enum Interrelation {
-    FATHER,
-    MOTHER,
-    SON,
-    DAUGHTER,
-    BROTHER,
-    SISTER,
-    UNCLE,
-    AUNT,
-    GRANDMA,
-    GRANDPA,
-    NEPHEW,
-    NIECE,
-    HUSBAND,
-    WIFE,
-    GRANDSON,
-    GRANDDAUGHTER
+    отец,
+    мать,
+    сын,
+    дочь,
+    брат,
+    сестра,
+    дядя,
+    тетя,
+    бабушка,
+    дедушка,
+    племянник,
+    племянница,
+    муж,
+    жена,
+    внук,
+    внучка
 }

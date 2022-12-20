@@ -25,7 +25,7 @@ public class Addiction {
 
     @Override
     public String toString() {
-        return String.format("%s is %s for %s", this.subject1.getFirstname() + " " + this.subject1.getSurname(),
+        return String.format("%s это %s для %s", this.subject1.getFirstname() + " " + this.subject1.getSurname(),
                 this.relation, this.subject2.getFirstname() + " " + this.subject2.getSurname());
     }
 

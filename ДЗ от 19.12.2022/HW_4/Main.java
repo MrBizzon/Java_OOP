@@ -8,53 +8,52 @@ import java.util.List;
 public class Main {
   public static void main(String[] args) {
 
-    FamilyMember tree = new FamilyMember();
-    List<Subject> people = new ArrayList<Subject>();
-    Subject human1 = new Subject("Name1", "Surname1", 30, Sex.MALE);
-    Subject human2 = new Subject("Name2", "Surname2", 27, Sex.FEMALE);
-    Subject human3 = new Subject("Name3", "Surname3", 57, Sex.MALE);
-    Subject human4 = new Subject("Name4", "Surname4", 50, Sex.FEMALE);
-    Subject human5 = new Subject("Name5", "Surname5", 29, Sex.MALE);
-    Subject human6 = new Subject("Name6", "Surname6", 19, Sex.MALE);
-    Subject human7 = new Subject("Name7", "Surname7", 86, Sex.FEMALE);
-    Subject human8 = new Subject("Name8", "Surname8", 3, Sex.MALE);
+    FamilyMember branch = new FamilyMember();
+    List<Subject> society = new ArrayList<Subject>();
+    Subject relative1 = new Subject("Иван", "Семенов", 30, Sex.Мужчина);
+    Subject relative2 = new Subject("Мария", "Васильева", 27, Sex.Женщина);
+    Subject relative3 = new Subject("Сергей", "Громов", 57, Sex.Мужчина);
+    Subject relative4 = new Subject("Нина", "Васина", 50, Sex.Женщина);
+    Subject relative5 = new Subject("Василий", "Семенов", 29, Sex.Мужчина);
+    Subject relative6 = new Subject("Семен", "Васильев", 19, Sex.Мужчина);
+    Subject relative7 = new Subject("Анна", "Брызгунова", 86, Sex.Женщина);
+    Subject relative8 = new Subject("Олег", "Зубарев", 3, Sex.Мужчина);
 
-    people.add(human1);
-    people.add(human2);
-    people.add(human3);
-    people.add(human4);
-    people.add(human5);
-    people.add(human6);
-    people.add(human7);
-    people.add(human8);
+    society.add(relative1);
+    society.add(relative2);
+    society.add(relative3);
+    society.add(relative4);
+    society.add(relative5);
+    society.add(relative6);
+    society.add(relative7);
+    society.add(relative8);
 
-    tree.addAddiction(human1, human2, Interrelation.HUSBAND, Interrelation.WIFE);
-    tree.addAddiction(human1, human3, Interrelation.SON, Interrelation.FATHER);
-    tree.addAddiction(human1, human8, Interrelation.FATHER, Interrelation.SON);
-    tree.addAddiction(human1, human4, Interrelation.MOTHER, Interrelation.SON);
-    tree.addAddiction(human1, human5, Interrelation.BROTHER, Interrelation.BROTHER);
-    tree.addAddiction(human1, human6, Interrelation.BROTHER, Interrelation.BROTHER);
-    tree.addAddiction(human1, human7, Interrelation.GRANDSON, Interrelation.GRANDMA);
+    branch.addAddiction(relative1, relative2, Interrelation.муж, Interrelation.жена);
+    branch.addAddiction(relative1, relative3, Interrelation.отец, Interrelation.отец);
+    branch.addAddiction(relative1, relative8, Interrelation.отец, Interrelation.отец);
+    branch.addAddiction(relative1, relative4, Interrelation.мать, Interrelation.отец);
+    branch.addAddiction(relative1, relative5, Interrelation.брат, Interrelation.брат);
+    branch.addAddiction(relative1, relative6, Interrelation.брат, Interrelation.брат);
+    branch.addAddiction(relative1, relative7, Interrelation.внук, Interrelation.бабушка);
 
-    tree.addAddiction(human5, human8, Interrelation.UNCLE, Interrelation.NEPHEW);
-    tree.addAddiction(human6, human8, Interrelation.UNCLE, Interrelation.NEPHEW);
+    branch.addAddiction(relative5, relative8, Interrelation.дядя, Interrelation.племянник);
+    branch.addAddiction(relative6, relative8, Interrelation.дядя, Interrelation.племянник);
 
-    tree.addAddiction(human2, human8, Interrelation.MOTHER, Interrelation.SON);
+    branch.addAddiction(relative2, relative8, Interrelation.мать, Interrelation.отец);
 
-    tree.addAddiction(human8, human3, Interrelation.GRANDSON, Interrelation.GRANDPA);
+    branch.addAddiction(relative8, relative3, Interrelation.внук, Interrelation.дедушка);
 
-    System.out.println(people);
+    System.out.println(society);
 
     Comparator agePeopleComparator = new FamilyMember();
-    Collections.sort(people, agePeopleComparator);
+    Collections.sort(society, agePeopleComparator);
 
-    System.out.println(people);
+    System.out.println(society);
 
     System.out.println("-------------------");
-    // Search.getRelation(human8,tree);
-    // System.out.println(tree.getRelationship());
-    // Collections.sort(tree.);
+    Search.getRelation(relative8, branch);
     System.out.println("-------------------\n");
+    System.out.println(branch.getRelationship());
 
   }
 }
