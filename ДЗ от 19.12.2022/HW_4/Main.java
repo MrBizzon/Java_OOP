@@ -1,8 +1,6 @@
 package HW_4;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class Main {
@@ -45,14 +43,9 @@ public class Main {
 
     System.out.println(society);
 
-    Comparator agePeopleComparator = new FamilyMember();
-    Collections.sort(society, agePeopleComparator);
-
-    System.out.println(society);
-
-    System.out.println("-------------------");
+    System.out.println("\n");
     Search.getRelation(relative8, branch);
-    System.out.println("-------------------\n");
+    System.out.println("\n");
     System.out.println(branch.getRelationship());
 
   }
