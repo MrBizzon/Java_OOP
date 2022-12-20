@@ -1,0 +1,32 @@
+package HW_4;
+
+public class Addiction {
+    private Subject subject1;
+    private Subject subject2;
+    private Relation relation;
+
+    public Addiction(Subject subject1, Subject subject2, Relation relation) {
+        this.subject1 = subject1;
+        this.subject2 = subject2;
+        this.relation = relation;
+    }
+
+    public Subject getPerson() {
+        return this.subject1;
+    }
+
+    public Subject getRelationPerson() {
+        return this.subject2;
+    }
+
+    public Relation getRelation() {
+        return relation;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s is %s for %s", this.subject1.getFirstname() + " " + this.subject1.getSurname(),
+                this.relation, this.subject2.getFirstname() + " " + this.subject2.getSurname());
+    }
+
+}
