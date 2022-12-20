@@ -15,7 +15,7 @@ public class FamilyMember implements Comparator<Subject> {
         this.connection.addAll(connections);
     }
 
-    public void addAddiction(Subject subject1, Subject subject2, Relation relation1, Relation relation2) {
+    public void addAddiction(Subject subject1, Subject subject2, Interrelation relation1, Interrelation relation2) {
         this.connection.add(new Addiction(subject1, subject2, relation1));
         this.connection.add(new Addiction(subject2, subject1, relation2));
     }

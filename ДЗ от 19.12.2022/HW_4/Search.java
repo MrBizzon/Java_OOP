@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Search {
-    public static void getRelation(Subject person, Relation relation, FamilyMember tree) {
+    public static void getRelation(Subject person, Interrelation relation, FamilyMember tree) {
         List<Addiction> elements = tree.getRelationship();
         Iterator<Addiction> iterator = elements.iterator();
         while (iterator.hasNext()) {
@@ -17,7 +17,7 @@ public class Search {
         }
     }
 
-    public static void getRelation(Relation relation, FamilyMember tree) {
+    public static void getRelation(Interrelation relation, FamilyMember tree) {
         List<Addiction> elements = tree.getRelationship();
         Iterator<Addiction> iterator = elements.iterator();
         while (iterator.hasNext()) {

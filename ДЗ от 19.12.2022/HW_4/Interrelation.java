@@ -1,6 +1,6 @@
 package HW_4;
 
-public enum Relation {
+public enum Interrelation {
     FATHER,
     MOTHER,
     SON,

@@ -28,20 +28,20 @@ public class Main {
     people.add(human7);
     people.add(human8);
 
-    tree.addAddiction(human1, human2, Relation.HUSBAND, Relation.WIFE);
-    tree.addAddiction(human1, human3, Relation.SON, Relation.FATHER);
-    tree.addAddiction(human1, human8, Relation.FATHER, Relation.SON);
-    tree.addAddiction(human1, human4, Relation.MOTHER, Relation.SON);
-    tree.addAddiction(human1, human5, Relation.BROTHER, Relation.BROTHER);
-    tree.addAddiction(human1, human6, Relation.BROTHER, Relation.BROTHER);
-    tree.addAddiction(human1, human7, Relation.GRANDSON, Relation.GRANDMA);
+    tree.addAddiction(human1, human2, Interrelation.HUSBAND, Interrelation.WIFE);
+    tree.addAddiction(human1, human3, Interrelation.SON, Interrelation.FATHER);
+    tree.addAddiction(human1, human8, Interrelation.FATHER, Interrelation.SON);
+    tree.addAddiction(human1, human4, Interrelation.MOTHER, Interrelation.SON);
+    tree.addAddiction(human1, human5, Interrelation.BROTHER, Interrelation.BROTHER);
+    tree.addAddiction(human1, human6, Interrelation.BROTHER, Interrelation.BROTHER);
+    tree.addAddiction(human1, human7, Interrelation.GRANDSON, Interrelation.GRANDMA);
 
-    tree.addAddiction(human5, human8, Relation.UNCLE, Relation.NEPHEW);
-    tree.addAddiction(human6, human8, Relation.UNCLE, Relation.NEPHEW);
+    tree.addAddiction(human5, human8, Interrelation.UNCLE, Interrelation.NEPHEW);
+    tree.addAddiction(human6, human8, Interrelation.UNCLE, Interrelation.NEPHEW);
 
-    tree.addAddiction(human2, human8, Relation.MOTHER, Relation.SON);
+    tree.addAddiction(human2, human8, Interrelation.MOTHER, Interrelation.SON);
 
-    tree.addAddiction(human8, human3, Relation.GRANDSON, Relation.GRANDPA);
+    tree.addAddiction(human8, human3, Interrelation.GRANDSON, Interrelation.GRANDPA);
 
     System.out.println(people);
 

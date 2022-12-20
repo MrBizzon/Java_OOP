@@ -3,9 +3,9 @@ package HW_4;
 public class Addiction {
     private Subject subject1;
     private Subject subject2;
-    private Relation relation;
+    private Interrelation relation;
 
-    public Addiction(Subject subject1, Subject subject2, Relation relation) {
+    public Addiction(Subject subject1, Subject subject2, Interrelation relation) {
         this.subject1 = subject1;
         this.subject2 = subject2;
         this.relation = relation;
@@ -19,7 +19,7 @@ public class Addiction {
         return this.subject2;
     }
 
-    public Relation getRelation() {
+    public Interrelation getRelation() {
         return relation;
     }
 
