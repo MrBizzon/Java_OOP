@@ -28,5 +28,6 @@ public class Addiction {
         return String.format("%s это %s для %s", this.subject1.getFirstname() + " " + this.subject1.getSurname(),
                 this.relation, this.subject2.getFirstname() + " " + this.subject2.getSurname());
     }
+    
 
 }
