@@ -19,4 +19,5 @@ public enum Interrelation {
     внучка,
     правнук,
     прадед
+    
 }
