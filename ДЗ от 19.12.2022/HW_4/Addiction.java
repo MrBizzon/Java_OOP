@@ -11,11 +11,11 @@ public class Addiction {
         this.relation = relation;
     }
 
-    public Subject getPerson() {
+    public Subject getAddiction() {
         return this.subject1;
     }
 
-    public Subject getRelationPerson() {
+    public Subject getRelationAddiction() {
         return this.subject2;
     }
 

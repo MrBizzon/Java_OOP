@@ -7,7 +7,7 @@ import java.util.List;
 public class FamilyMember implements Comparator<Subject> {
     private List<Addiction> connection = new ArrayList<>();
 
-    public List<Addiction> getRelationship() {
+    public List<Addiction> getAddiction() {
         return connection;
     }
 
@@ -18,15 +18,6 @@ public class FamilyMember implements Comparator<Subject> {
     public void addAddiction(Subject subject1, Subject subject2, Interrelation relation1, Interrelation relation2) {
         this.connection.add(new Addiction(subject1, subject2, relation1));
         this.connection.add(new Addiction(subject2, subject1, relation2));
-    }
-
-    @Override
-    public String toString() {
-        String result = new String();
-        for (Addiction el : connection) {
-            result += el + "\n";
-        }
-        return result;
     }
 
     @Override
