@@ -32,7 +32,7 @@ public class ReadingXML {
                     temporary = str.substring(index1, index2 + 1);
                 }
 
-                if (temporary.equals("<task>")) {
+                if (temporary.equals("<purpose>")) {
                     LocalDate createData = LocalDate.now();
                     LocalDate deadLine = LocalDate.now();
                     LocalTime createTime = LocalTime.now();
@@ -63,7 +63,7 @@ public class ReadingXML {
                                 author = tagValue;
                                 index2 = nextTag + tag.length();
                             }
-                            case ("<taskDescription>") -> {
+                            case ("<purposeDescription>") -> {
                                 description = tagValue;
                                 index2 = nextTag + tag.length();
                             }
@@ -71,22 +71,22 @@ public class ReadingXML {
                                 priority = tagValue;
                                 index2 = nextTag + tag.length();
                             }
-                            case ("</task>") -> {
+                            case ("</purpose>") -> {
                                 purposeNotEnded = false;
                                 index2 = tagIndexStop;
                             }
                         }
 
                     }
-                    PurposePriority taskPriority = PurposePriority.valueOf(priority);
-                    tasks.add(new Purpose(createData, createTime, deadLine, author, description, taskPriority));
+                    PurposePriority purposePriority = PurposePriority.valueOf(priority);
+                    tasks.add(new Purpose(createData, createTime, deadLine, author, description, purposePriority));
                 }
                 startIndex = index2;
             }
             PurposeList.addAll(tasks);
 
         } catch (Exception e) {
-            System.out.println("Read tasks ERROR");
+            System.out.println("Ошибка чтения задач");
             System.out.println(e);
         }
     }

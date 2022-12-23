@@ -14,9 +14,9 @@ public class WriteAsJSON {
                 strBuilder.append("\"задача");
                 strBuilder.append(iterator);
                 strBuilder.append("\":{\"Дата создания\":\"");
-                strBuilder.append(task.getCreateDate());
+                strBuilder.append(task.getAddDate());
                 strBuilder.append("\",\"Время создания\":\"");
-                strBuilder.append(task.getCreateTime());
+                strBuilder.append(task.getAddTime());
                 strBuilder.append("\",\"Дедлайн\":\"");
                 strBuilder.append(task.getDeadline());
                 strBuilder.append("\",\"Автор\":\"");

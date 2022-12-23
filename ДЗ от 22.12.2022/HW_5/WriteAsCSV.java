@@ -10,9 +10,9 @@ public class WriteAsCSV {
         try (FileWriter fr = new FileWriter(file, false);) {
             StringBuilder strBuilder = new StringBuilder();
             for (Purpose task : PurposeList.getPurpose()) {
-                strBuilder.append(task.getCreateDate());
+                strBuilder.append(task.getAddDate());
                 strBuilder.append(";");
-                strBuilder.append(task.getCreateTime());
+                strBuilder.append(task.getAddTime());
                 strBuilder.append(";");
                 strBuilder.append(task.getDeadline());
                 strBuilder.append(";");

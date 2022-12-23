@@ -41,11 +41,11 @@ public class PurposeList {
         }
     }
 
-    public static void updateByDeadline() {
+    public static void newTerm() {
         purpose.sort(new TermComparator());
     }
 
-    public static void updateByPriority() {
+    public static void newPriority() {
         purpose.sort(new PriorityComparator());
     }
 

@@ -9,13 +9,13 @@ public class WriteAsXML {
 
         try (FileWriter fr = new FileWriter(file, false);) {
             StringBuilder strBuilder = new StringBuilder();
-            strBuilder.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<TaskList>\n");
+            strBuilder.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<PurposeList>\n");
             for (Purpose task : PurposeList.getPurpose()) {
                 strBuilder.append("<задача>\n<Дата создания>");
-                strBuilder.append(task.getCreateDate());
+                strBuilder.append(task.getAddDate());
                 strBuilder.append("</Дата создания>\n");
                 strBuilder.append("<Время создания>");
-                strBuilder.append(task.getCreateTime());
+                strBuilder.append(task.getAddTime());
                 strBuilder.append("</Время создания>\n");
                 strBuilder.append("<Дедлайн>");
                 strBuilder.append(task.getDeadline());
@@ -30,7 +30,7 @@ public class WriteAsXML {
                 strBuilder.append(task.getPurposePriority());
                 strBuilder.append("</Приоритет>\n</задача>\n");
             }
-            strBuilder.append("</TaskList>");
+            strBuilder.append("</PurposeList>");
             fr.append(strBuilder.toString());
         } catch (IOException e) {
             System.out.printf("Ошибка записи! %s", e);

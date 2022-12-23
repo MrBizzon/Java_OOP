@@ -26,7 +26,7 @@ public class AddPurpose {
         author = sc.nextLine();
         System.out.println("Описание задачи");
         description = sc.nextLine();
-        System.out.println("Приоритет задачи (низкий, средний, высокий): ");
+        System.out.println("Приоритет задачи (High, Medium, Low): ");
         priority = sc.nextLine();
         PurposePriority purposePriority = PurposePriority.valueOf(priority);
         String time = LocalTime.now().getHour() + ":" + LocalTime.now().getMinute();

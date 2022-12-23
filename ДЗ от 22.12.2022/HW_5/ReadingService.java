@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class ReadingService {
     static Scanner sc = new Scanner(System.in);
-    public static String path = "c:/Users/Bz/Desktop/Java_OOP/ДЗ от 22.12.2022/HW_5/TaskList";
+    public static String path = "c:/Users/Bz/Desktop/Java_OOP/ДЗ от 22.12.2022/HW_5/PurposeList";
 
     public static void getChoice() {
         boolean repeatInput = true;

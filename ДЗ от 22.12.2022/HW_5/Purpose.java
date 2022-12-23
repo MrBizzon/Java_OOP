@@ -6,31 +6,31 @@ import java.time.Period;
 
 public class Purpose {
     private static int idCount = 0;
-    private LocalDate createDate;
-    private LocalTime createTime;
+    private LocalDate addDate;
+    private LocalTime addTime;
     private LocalDate deadline;
     private String author;
     private String description;
     private PurposePriority purposePriority;
     private int id;
 
-    public Purpose(LocalDate createDate, LocalTime createTime, LocalDate deadline, String author, String description,
-            PurposePriority taskPriority) {
-        this.createDate = createDate;
-        this.createTime = createTime;
+    public Purpose(LocalDate addDate, LocalTime addTime, LocalDate deadline, String author, String description,
+            PurposePriority purposePriority) {
+        this.addDate = addDate;
+        this.addTime = addTime;
         this.deadline = deadline;
         this.author = author;
         this.description = description;
-        this.purposePriority = taskPriority;
+        this.purposePriority = purposePriority;
         this.id = ++idCount;
     }
 
-    public LocalDate getCreateDate() {
-        return createDate;
+    public LocalDate getAddDate() {
+        return addDate;
     }
 
-    public LocalTime getCreateTime() {
-        return createTime;
+    public LocalTime getAddTime() {
+        return addTime;
     }
 
     public LocalDate getDeadline() {
@@ -55,12 +55,12 @@ public class Purpose {
 
     @Override
     public String toString() {
-        Period p = Period.between(LocalDate.now(), deadline);
+        Period gap = Period.between(LocalDate.now(), deadline);
         return "Задача{" +
                 "id=" + id +
-                ", дней до крайнего срока=" + p.getYears() + "y:" + p.getMonths() + "m:" + p.getDays() +
-                "d, дата создания=" + createDate +
-                ", время создания=" + createTime +
+                ", дней до крайнего срока=" + gap.getYears() + "y:" + gap.getMonths() + "m:" + gap.getDays() +
+                "d, дата создания=" + addDate +
+                ", время создания=" + addTime +
                 ", дедлайн=" + deadline +
                 ", автор='" + author + '\'' +
                 ", описание='" + description + '\'' +
@@ -68,18 +68,21 @@ public class Purpose {
                 '}';
     }
 
-    public static void print(Purpose task) {
+    public static void print(Purpose purpose) {
 
         System.out.println("------------------------------------------------------");
-        System.out.printf("ID задачи: \t\t\t\t\t%d\n", task.getId());
-        System.out.printf("Дней до дедлайна: \t\t\t%s\n",
-                task.getDeadline().toEpochDay() - LocalDate.now().toEpochDay());
-        System.out.printf("дедлайн: \t\t\t\t\t%s\n", task.getDeadline());
-        System.out.printf("Дата создания: \t\t\t%s\n", task.getCreateDate());
-        System.out.printf("Время создания: \t\t\t%s\n", task.getCreateTime());
-        System.out.printf("Автор задачи: \t\t\t%s\n", task.getAuthor());
-        System.out.printf("Описание: \t\t\t\t%s\n", task.getDescription());
-        System.out.printf("Приоритет: \t\t\t\t%s\n", task.getPurposePriority());
+        System.out.printf("ID задачи: \t\t%d\n", purpose.getId());
+        System.out.printf("Дней до дедлайна: \t%s\n",
+                purpose.getDeadline().toEpochDay() - LocalDate.now().toEpochDay());
+        System.out.printf("дедлайн: \t\t%s\n", purpose.getDeadline());
+        System.out.printf("Дата создания: \t\t%s\n", purpose.getAddDate());
+        System.out.printf("Время создания: \t%s\n", purpose.getAddTime());
+        System.out.printf("Автор задачи: \t\t%s\n", purpose.getAuthor());
+        System.out.printf("Описание: \t\t%s\n", purpose.getDescription());
+        System.out.printf("Приоритет: \t\t%s\n", purpose.getPurposePriority());
         System.out.println("-------------------------------------------------------");
+    }
+
+    public static void print(int purposeById) {
     }
 }

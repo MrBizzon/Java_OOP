@@ -16,7 +16,7 @@ public class Main {
         int currentTask = 0;
         while (true) {
             if (PurposeList.getPurpose().size() > 0) {
-                // Task.print(TaskList.getTaskById(0));
+                Purpose.print(PurposeList.getPurposeById(0));
             }
             switch (getValue()) {
                 case ("1"):
@@ -40,7 +40,7 @@ public class Main {
                     currentTask = 0;
                     break;
                 case ("5"):
-                    PurposeList.updateByDeadline();
+                    PurposeList.newTerm();
                     currentTask = 0;
                     break;
                 case ("6"):
@@ -55,7 +55,7 @@ public class Main {
                     }
                     break;
                 default:
-                    System.out.println("Не входит в меню");
+                    System.out.println("Неверный ввод");
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {

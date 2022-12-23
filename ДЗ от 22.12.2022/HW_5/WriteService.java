@@ -4,13 +4,13 @@ import java.io.File;
 import java.util.Scanner;
 
 public class WriteService {
-    public static String path = "c:/Users/Bz/Desktop/Java_OOP/ДЗ от 22.12.2022/HW_5/TaskList";
+    public static String path = "c:/Users/Bz/Desktop/Java_OOP/ДЗ от 22.12.2022/HW_5/PurposeList";
     static Scanner sc = new Scanner(System.in);
 
     public static void getChoice() {
 
         while (true) {
-            System.out.println("Записать в: 1-XML, 2-CSV, 3-JSON");
+            System.out.println("Записать в формате: 1-XML, 2-CSV, 3-JSON");
             switch (sc.next()) {
                 case ("1") -> {
                     writeAsXML();
@@ -31,17 +31,17 @@ public class WriteService {
 
     public static void writeAsXML() {
         path += ".xml";
-        WriteAsXML exp = new WriteAsXML(new File(path));
+        WriteAsXML purp = new WriteAsXML(new File(path));
     }
 
     public static void writeAsCSV() {
         path += ".csv";
-        WriteAsCSV exp = new WriteAsCSV(new File(path));
+        WriteAsCSV purp = new WriteAsCSV(new File(path));
     }
 
     public static void writeAsJSON() {
         path += ".json";
-        WriteAsJSON exp = new WriteAsJSON(new File(path));
+        WriteAsJSON purp = new WriteAsJSON(new File(path));
     }
 
 }
