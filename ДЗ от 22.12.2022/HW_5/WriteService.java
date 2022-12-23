@@ -13,15 +13,15 @@ public class WriteService {
             System.out.println("Записать в: 1-XML, 2-CSV, 3-JSON");
             switch (sc.next()) {
                 case ("1") -> {
-                    WriteToXML();
+                    writeAsXML();
                     break;
                 }
                 case ("2") -> {
-                    WriteToCSV();
+                    writeAsCSV();
                     break;
                 }
                 case ("3") -> {
-                    WriteToJSON();
+                    writeAsJSON();
                     break;
                 }
                 default -> System.out.println("Ошибка записи");
@@ -29,19 +29,19 @@ public class WriteService {
         }
     }
 
-    public static void WriteToXML() {
+    public static void writeAsXML() {
         path += ".xml";
-        WriteToXML exp = new WriteToXML(new File(path));
+        WriteAsXML exp = new WriteAsXML(new File(path));
     }
 
-    public static void WriteToCSV() {
+    public static void writeAsCSV() {
         path += ".csv";
-        WriteToCSV exp = new WriteToCSV(new File(path));
+        WriteAsCSV exp = new WriteAsCSV(new File(path));
     }
 
-    public static void WriteToJSON() {
+    public static void writeAsJSON() {
         path += ".json";
-        WriteToJSON exp = new WriteToJSON(new File(path));
+        WriteAsJSON exp = new WriteAsJSON(new File(path));
     }
 
 }

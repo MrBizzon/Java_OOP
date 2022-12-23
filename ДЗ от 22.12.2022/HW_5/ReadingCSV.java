@@ -8,9 +8,9 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Scanner;
 
-public class ReaderFromCSV {
+public class ReadingCSV {
 
-    public ReaderFromCSV(File fName) {
+    public ReadingCSV(File fName) {
         try (Scanner reader = new Scanner(new BufferedReader(new FileReader(fName)))) {
 
             while (reader.hasNext()) {
@@ -23,13 +23,13 @@ public class ReaderFromCSV {
                     String author = stringArray[3];
                     String description = stringArray[4];
                     String priority = stringArray[5];
-                    TaskPriority taskPriority = TaskPriority.valueOf(priority);
-                    TaskList.add(new Task(createDate,
+                    PurposePriority purposePriority = PurposePriority.valueOf(priority);
+                    PurposeList.add(new Purpose(createDate,
                             createTime,
                             deadline,
                             author,
                             description,
-                            taskPriority));
+                            purposePriority));
                 }
             }
 

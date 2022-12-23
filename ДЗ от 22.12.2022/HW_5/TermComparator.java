@@ -2,10 +2,10 @@ package HW_5;
 
 import java.util.Comparator;
 
-public class DeadlineComparator implements Comparator<Task> {
+public class TermComparator implements Comparator<Purpose> {
 
     @Override
-    public int compare(Task o1, Task o2) {
+    public int compare(Purpose o1, Purpose o2) {
         return o1.getDeadline().compareTo(o2.getDeadline());
     }
 }

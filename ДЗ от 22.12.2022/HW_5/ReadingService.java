@@ -3,7 +3,7 @@ package HW_5;
 import java.io.File;
 import java.util.Scanner;
 
-public class ReaderService {
+public class ReadingService {
     static Scanner sc = new Scanner(System.in);
     public static String path = "c:/Users/Bz/Desktop/Java_OOP/ДЗ от 22.12.2022/HW_5/TaskList";
 
@@ -13,15 +13,15 @@ public class ReaderService {
             System.out.println("Из какого файла прочитать: 1-XML, 2-CSV, 3-JSON");
             switch (sc.next()) {
                 case ("1") -> {
-                    ReaderFromXML();
+                    ReadingXML();
                     repeatInput = false;
                 }
                 case ("2") -> {
-                    ReaderFromCSV();
+                    ReadingCSV();
                     repeatInput = false;
                 }
                 case ("3") -> {
-                    ReaderFromJSON();
+                    ReadingJSON();
                     repeatInput = false;
                 }
                 default -> System.out.println("Ошибка чтения");
@@ -29,19 +29,19 @@ public class ReaderService {
         }
     }
 
-    public static void ReaderFromXML() {
+    public static void ReadingXML() {
         path += ".xml";
-        ReaderFromXML imp = new ReaderFromXML(new File(path));
+        ReadingXML imp = new ReadingXML(new File(path));
     }
 
-    public static void ReaderFromCSV() {
+    public static void ReadingCSV() {
         path += ".csv";
-        ReaderFromCSV imp = new ReaderFromCSV(new File(path));
+        ReadingCSV imp = new ReadingCSV(new File(path));
     }
 
-    public static void ReaderFromJSON() {
+    public static void ReadingJSON() {
         path += ".json";
-        ReaderFromJSON imp = new ReaderFromJSON(new File(path));
+        ReadingJSON imp = new ReadingJSON(new File(path));
     }
 
 }

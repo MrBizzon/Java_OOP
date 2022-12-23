@@ -1,6 +1,6 @@
 package HW_5;
 
-public enum TaskPriority {
+public enum PurposePriority {
     LOW,
     MEDIUM,
     HIGH

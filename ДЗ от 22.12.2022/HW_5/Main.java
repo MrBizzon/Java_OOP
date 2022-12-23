@@ -1,6 +1,5 @@
 package HW_5;
 
-import java.io.File;
 import java.util.Scanner;
 
 public class Main {
@@ -16,43 +15,43 @@ public class Main {
     public static void main(String[] args) {
         int currentTask = 0;
         while (true) {
-            if (TaskList.getTasks().size() > 0) {
+            if (PurposeList.getPurpose().size() > 0) {
                 // Task.print(TaskList.getTaskById(0));
             }
             switch (getValue()) {
                 case ("1"):
                     currentTask--;
                     if (currentTask < 0) {
-                        currentTask = TaskList.getTasks().size() - 1;
+                        currentTask = PurposeList.getPurpose().size() - 1;
                     }
                     break;
                 case ("2"):
                     currentTask++;
-                    if (currentTask > TaskList.getTasks().size() - 1) {
+                    if (currentTask > PurposeList.getPurpose().size() - 1) {
                         currentTask = 0;
                     }
                     break;
                 case ("3"):
-                    AddTask.addTask();
+                    AddPurpose.purposeAdd();
                     currentTask = 0;
                     break;
                 case ("4"):
-                    DeleteTask.deleteTask();
+                    DeletePurpose.purposeDelete();
                     currentTask = 0;
                     break;
                 case ("5"):
-                    TaskList.updateByDeadline();
+                    PurposeList.updateByDeadline();
                     currentTask = 0;
                     break;
                 case ("6"):
-                    ReaderService.getChoice();
+                    ReadingService.getChoice();
                     break;
                 case ("7"):
                     WriteService.getChoice();
                     break;
                 case ("8"):
-                    for (Task task : TaskList.getTasks()) {
-                        Task.print(task);
+                    for (Purpose task : PurposeList.getPurpose()) {
+                        Purpose.print(task);
                     }
                     break;
                 default:

@@ -4,24 +4,24 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.Period;
 
-public class Task {
+public class Purpose {
     private static int idCount = 0;
     private LocalDate createDate;
     private LocalTime createTime;
     private LocalDate deadline;
     private String author;
     private String description;
-    private TaskPriority taskPriority;
+    private PurposePriority purposePriority;
     private int id;
 
-    public Task(LocalDate createDate, LocalTime createTime, LocalDate deadline, String author, String description,
-            TaskPriority taskPriority) {
+    public Purpose(LocalDate createDate, LocalTime createTime, LocalDate deadline, String author, String description,
+            PurposePriority taskPriority) {
         this.createDate = createDate;
         this.createTime = createTime;
         this.deadline = deadline;
         this.author = author;
         this.description = description;
-        this.taskPriority = taskPriority;
+        this.purposePriority = taskPriority;
         this.id = ++idCount;
     }
 
@@ -49,8 +49,8 @@ public class Task {
         return id;
     }
 
-    public TaskPriority getTaskPriority() {
-        return taskPriority;
+    public PurposePriority getPurposePriority() {
+        return purposePriority;
     }
 
     @Override
@@ -64,11 +64,11 @@ public class Task {
                 ", дедлайн=" + deadline +
                 ", автор='" + author + '\'' +
                 ", описание='" + description + '\'' +
-                ", приоритет='" + taskPriority + '\'' +
+                ", приоритет='" + purposePriority + '\'' +
                 '}';
     }
 
-    public static void print(Task task) {
+    public static void print(Purpose task) {
 
         System.out.println("------------------------------------------------------");
         System.out.printf("ID задачи: \t\t\t\t\t%d\n", task.getId());
@@ -79,7 +79,7 @@ public class Task {
         System.out.printf("Время создания: \t\t\t%s\n", task.getCreateTime());
         System.out.printf("Автор задачи: \t\t\t%s\n", task.getAuthor());
         System.out.printf("Описание: \t\t\t\t%s\n", task.getDescription());
-        System.out.printf("Приоритет: \t\t\t\t%s\n", task.getTaskPriority());
+        System.out.printf("Приоритет: \t\t\t\t%s\n", task.getPurposePriority());
         System.out.println("-------------------------------------------------------");
     }
 }

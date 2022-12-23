@@ -4,12 +4,12 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class WriteToCSV {
-    public WriteToCSV(File file) {
+public class WriteAsCSV {
+    public WriteAsCSV(File file) {
 
         try (FileWriter fr = new FileWriter(file, false);) {
             StringBuilder strBuilder = new StringBuilder();
-            for (Task task : TaskList.getTasks()) {
+            for (Purpose task : PurposeList.getPurpose()) {
                 strBuilder.append(task.getCreateDate());
                 strBuilder.append(";");
                 strBuilder.append(task.getCreateTime());
@@ -20,7 +20,7 @@ public class WriteToCSV {
                 strBuilder.append(";");
                 strBuilder.append(task.getDescription());
                 strBuilder.append(";");
-                strBuilder.append(task.getTaskPriority());
+                strBuilder.append(task.getPurposePriority());
                 strBuilder.append("\n");
             }
             fr.append(strBuilder.toString());

@@ -4,13 +4,13 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class WriteToJSON {
-    public WriteToJSON(File file) {
+public class WriteAsJSON {
+    public WriteAsJSON(File file) {
         try (FileWriter fr = new FileWriter(file, false);) {
             StringBuilder strBuilder = new StringBuilder();
             strBuilder.append("{");
             int iterator = 1;
-            for (Task task : TaskList.getTasks()) {
+            for (Purpose task : PurposeList.getPurpose()) {
                 strBuilder.append("\"задача");
                 strBuilder.append(iterator);
                 strBuilder.append("\":{\"Дата создания\":\"");
@@ -24,7 +24,7 @@ public class WriteToJSON {
                 strBuilder.append("\",\"Описание\":\"");
                 strBuilder.append(task.getDescription());
                 strBuilder.append("\",\"Приоритет\":\"");
-                strBuilder.append(task.getTaskPriority());
+                strBuilder.append(task.getPurposePriority());
                 strBuilder.append("\"},");
                 iterator++;
             }

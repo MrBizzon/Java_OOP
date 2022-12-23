@@ -4,10 +4,10 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Scanner;
 
-public class AddTask {
+public class AddPurpose {
     static Scanner sc = new Scanner(System.in);
 
-    public static void addTask() {
+    public static void purposeAdd() {
         boolean duplicateInput = true;
         String author;
         String description = new String();
@@ -28,10 +28,10 @@ public class AddTask {
         description = sc.nextLine();
         System.out.println("Приоритет задачи (низкий, средний, высокий): ");
         priority = sc.nextLine();
-        TaskPriority purposePriority = TaskPriority.valueOf(priority);
+        PurposePriority purposePriority = PurposePriority.valueOf(priority);
         String time = LocalTime.now().getHour() + ":" + LocalTime.now().getMinute();
-        TaskList.add(new Task(LocalDate.now(), LocalTime.parse(time), deadline, author, description, purposePriority));
-        Task.print(new Task(LocalDate.now(), LocalTime.parse(time), deadline, author, description, purposePriority));
+        PurposeList.add(new Purpose(LocalDate.now(), LocalTime.parse(time), deadline, author, description, purposePriority));
+        Purpose.print(new Purpose(LocalDate.now(), LocalTime.parse(time), deadline, author, description, purposePriority));
     }
 
 }

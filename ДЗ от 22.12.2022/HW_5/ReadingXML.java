@@ -9,14 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ReaderFromXML {
-    public List<Task> tasks = new ArrayList<>();
+public class ReadingXML {
+    public List<Purpose> tasks = new ArrayList<>();
 
-    public ReaderFromXML(File fName) {
-        try (Scanner reader = new Scanner(new BufferedReader(new FileReader(fName)))) {
+    public ReadingXML(File fName) {
+        try (Scanner reading = new Scanner(new BufferedReader(new FileReader(fName)))) {
             StringBuilder stringBuilder = new StringBuilder();
-            while (reader.hasNext()) {
-                stringBuilder.append(reader.nextLine());
+            while (reading.hasNext()) {
+                stringBuilder.append(reading.nextLine());
             }
             String str = stringBuilder.toString();
             str = str.replace("\n", "");
@@ -24,23 +24,23 @@ public class ReaderFromXML {
             while (startIndex < str.length()) {
                 int index1 = str.indexOf("<", startIndex);
                 int index2 = str.indexOf(">", index1);
-                String temp = new String();
+                String temporary = new String();
                 if (index1 < 0) {
                     index2 = str.length();
-                    temp = "endOfFile";
+                    temporary = "endOfFile";
                 } else {
-                    temp = str.substring(index1, index2 + 1);
+                    temporary = str.substring(index1, index2 + 1);
                 }
 
-                if (temp.equals("<task>")) {
+                if (temporary.equals("<task>")) {
                     LocalDate createData = LocalDate.now();
                     LocalDate deadLine = LocalDate.now();
                     LocalTime createTime = LocalTime.now();
                     String author = new String();
                     String description = new String();
                     String priority = new String();
-                    boolean taskNotEnded = true;
-                    while (taskNotEnded) {
+                    boolean purposeNotEnded = true;
+                    while (purposeNotEnded) {
                         int tagIndexStart = str.indexOf("<", index2 + 1);
                         int tagIndexStop = str.indexOf(">", tagIndexStart);
                         String tag = str.substring(tagIndexStart, tagIndexStop + 1);
@@ -72,18 +72,18 @@ public class ReaderFromXML {
                                 index2 = nextTag + tag.length();
                             }
                             case ("</task>") -> {
-                                taskNotEnded = false;
+                                purposeNotEnded = false;
                                 index2 = tagIndexStop;
                             }
                         }
 
                     }
-                    TaskPriority taskPriority = TaskPriority.valueOf(priority);
-                    tasks.add(new Task(createData, createTime, deadLine, author, description, taskPriority));
+                    PurposePriority taskPriority = PurposePriority.valueOf(priority);
+                    tasks.add(new Purpose(createData, createTime, deadLine, author, description, taskPriority));
                 }
                 startIndex = index2;
             }
-            TaskList.addAll(tasks);
+            PurposeList.addAll(tasks);
 
         } catch (Exception e) {
             System.out.println("Read tasks ERROR");

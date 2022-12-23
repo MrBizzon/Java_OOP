@@ -2,10 +2,10 @@ package HW_5;
 
 import java.util.Comparator;
 
-public class PriorityComparator implements Comparator<Task> {
+public class PriorityComparator implements Comparator<Purpose> {
 
     @Override
-    public int compare(Task o1, Task o2) {
-        return o1.getTaskPriority().compareTo(o2.getTaskPriority());
+    public int compare(Purpose o1, Purpose o2) {
+        return o1.getPurposePriority().compareTo(o2.getPurposePriority());
     }
 }

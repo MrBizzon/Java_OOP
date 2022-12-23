@@ -4,13 +4,13 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class WriteToXML {
-    public WriteToXML(File file) {
+public class WriteAsXML {
+    public WriteAsXML(File file) {
 
         try (FileWriter fr = new FileWriter(file, false);) {
             StringBuilder strBuilder = new StringBuilder();
             strBuilder.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<TaskList>\n");
-            for (Task task : TaskList.getTasks()) {
+            for (Purpose task : PurposeList.getPurpose()) {
                 strBuilder.append("<задача>\n<Дата создания>");
                 strBuilder.append(task.getCreateDate());
                 strBuilder.append("</Дата создания>\n");
@@ -27,7 +27,7 @@ public class WriteToXML {
                 strBuilder.append(task.getDescription());
                 strBuilder.append("</Описание>\n");
                 strBuilder.append("<Приоритет>");
-                strBuilder.append(task.getTaskPriority());
+                strBuilder.append(task.getPurposePriority());
                 strBuilder.append("</Приоритет>\n</задача>\n");
             }
             strBuilder.append("</TaskList>");
