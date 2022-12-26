@@ -43,5 +43,4 @@ public class ReadingService {
         path += ".json";
         ReadingJSON imp = new ReadingJSON(new File(path));
     }
-
 }
