@@ -28,5 +28,4 @@ public class WriteAsCSV {
             System.out.printf("Ошибка записи! %s", e);
         }
     }
-
 }
