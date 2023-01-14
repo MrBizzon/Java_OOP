@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListOfUsers {
-    private static List<UserCategory> userList= new ArrayList<>();
+    private static List<UserCategory> userList = new ArrayList<>();
 
-    public static void addUser(UserCategory user){
+    public static void addUser(UserCategory user) {
         userList.add(user);
-        System.out.println("Пользователь "+ user.getNickName() +" успешно добавлен;\n");
+        System.out.println("Пользователь " + user.getNickName() + " успешно добавлен;\n");
     }
+
     public static void removeUser(String nickName) {
         System.out.println("Пользователь " + nickName + " удален.");
         try {
@@ -26,7 +27,7 @@ public class ListOfUsers {
     }
 
     public static UserCategory getUser(String name) {
-        UserCategory temp = new UserCategory("Безымянный",00,"нет почты", TypeOfUsers.ADMIN);
+        UserCategory temp = new UserCategory("Безымянный", 00, "нет почты", TypeOfUsers.ADMIN);
         for (UserCategory item : userList) {
             if (item.getNickName().equals(name)) {
                 temp = item;
@@ -36,9 +37,11 @@ public class ListOfUsers {
         return temp;
 
     }
+
     public static void printUsersList() {
         for (UserCategory item : userList) {
             System.out.println(item.getName());
         }
     }
+
 }

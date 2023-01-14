@@ -34,5 +34,4 @@ public class letterList {
                     + item.getMessageText() + "\n");
         }
     }
-
 }
