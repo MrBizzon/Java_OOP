@@ -27,7 +27,7 @@ public class ListOfUsers {
     }
 
     public static UserCategory getUser(String name) {
-        UserCategory temp = new UserCategory("Безымянный", 00, "нет почты", TypeOfUsers.ADMIN);
+        UserCategory temp = new UserCategory("Безымянный", 00, "нет почты", TypeOfUsers.Администратор);
         for (UserCategory item : userList) {
             if (item.getNickName().equals(name)) {
                 temp = item;

@@ -19,7 +19,7 @@ public class View {
             switch (choice) {
                 case ("1") -> {
 
-                    if (ListOfUsers.getUser(nick).userType.equals(TypeOfUsers.ADMIN)) {
+                    if (ListOfUsers.getUser(nick).userType.equals(TypeOfUsers.Администратор)) {
 
                         System.out.println("Введите ник для нового пользователя:");
                         String name = sc.nextLine();
@@ -28,24 +28,24 @@ public class View {
                         System.out.println("Введите адрес электронной почты:");
                         String email = sc.nextLine();
                         System.out.println(
-                                "Введите тип пользователя\n1 - USER\n2 - ADMIN\n3 - MODERATOR\n4 - GUEST");
+                                "Введите тип пользователя\n1 - Пользователь\n2 - Администратор\n3 - Модератор\n4 - Гость");
                         String userType = sc.nextLine();
 
                         switch (userType) {
                             case ("1") -> {
-                                ListOfUsers.addUser(new UserCategory(name, age, email, TypeOfUsers.USER));
+                                ListOfUsers.addUser(new UserCategory(name, age, email, TypeOfUsers.Пользователь));
                                 break;
                             }
                             case ("2") -> {
-                                ListOfUsers.addUser(new UserCategory(name, age, email, TypeOfUsers.ADMIN));
+                                ListOfUsers.addUser(new UserCategory(name, age, email, TypeOfUsers.Администратор));
                                 break;
                             }
                             case ("3") -> {
-                                ListOfUsers.addUser(new UserCategory(name, age, email, TypeOfUsers.MODERATOR));
+                                ListOfUsers.addUser(new UserCategory(name, age, email, TypeOfUsers.Модератор));
                                 break;
                             }
                             case ("4") -> {
-                                ListOfUsers.addUser(new UserCategory(name, age, email, TypeOfUsers.GUEST));
+                                ListOfUsers.addUser(new UserCategory(name, age, email, TypeOfUsers.Гость));
                                 break;
                             }
                             default -> System.out.println("ОШИБКА ВВОДА!");
@@ -58,7 +58,7 @@ public class View {
                 }
                 case ("2") -> {
 
-                    if (ListOfUsers.getUser(nick).getUserType().equals(TypeOfUsers.ADMIN)) {
+                    if (ListOfUsers.getUser(nick).getUserType().equals(TypeOfUsers.Администратор)) {
                         System.out.println("Введите ник для удаления: ");
                         String nickName = sc.nextLine();
                         ListOfUsers.removeUser(nickName);
