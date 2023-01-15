@@ -18,9 +18,10 @@ public class UserCategory extends User {
 
     @Override
     public String toString() {
-        return "Ник пользователя: " + nickName+ ";\n" +
-                "Возраст пользователя составляет: " + age+ ";\n" +
-                "Электронная почта пользователя: " + emailAddress+ ";\n" +
+        return "Ник пользователя: " + nickName + ";\n" +
+                "Возраст пользователя составляет: " + age + ";\n" +
+                "Электронная почта пользователя: " + emailAddress + ";\n" +
                 "Роль пользователя: " + userType + "\n";
     }
+
 }

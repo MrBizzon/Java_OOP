@@ -22,5 +22,5 @@ public abstract class User {
     public Integer getUserAge() {
         return age;
     }
-
+    
 }
