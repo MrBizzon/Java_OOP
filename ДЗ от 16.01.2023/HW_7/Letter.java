@@ -12,5 +12,4 @@ public abstract class Letter {
         this.user = user;
         this.text = text;
     }
-    
 }
