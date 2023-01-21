@@ -8,5 +8,4 @@ student_data = {
     'ID': ['3', '4', '1', '2', '5']
 }
 
-
 sd = pandas.DataFrame(data=student_data)
