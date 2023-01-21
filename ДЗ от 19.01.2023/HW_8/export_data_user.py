@@ -7,3 +7,4 @@ def export_data_user(data, sep=None):
         else:
             file.write(sep.join(data))
             file.write(f"\n")
+            
