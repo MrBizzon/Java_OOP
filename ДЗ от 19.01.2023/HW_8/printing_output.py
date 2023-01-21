@@ -7,3 +7,4 @@ def printing_out(data):
         msgbox(data)
     else:
         print("Журнал пуст!")
+        
