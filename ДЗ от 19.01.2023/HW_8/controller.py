@@ -61,3 +61,4 @@ def office():
         index = cad.student_data['ID'].index(ID)
         msgbox(
             f" Сидит в кабинете {cad.student_data['Предмет'][index]}, {cad.student_data['Ряд'][index]}, за партой номер {cad.student_data['Вариант'][index]}, {cad.student_data['Вид парты'][index]}")
+
